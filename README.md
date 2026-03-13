@@ -87,10 +87,7 @@ docker images | grep chelsielele
 <img src="screenshots/images-check.png" width="700">
 ---
 
-```
-docker push chelsielele/about-lwsc:v1
-```
-I pushed the image to Docker Hub:
+Pushed the image to Docker Hub:
 
 ```
 docker push chelsielele/about-lwsc:v1
@@ -102,7 +99,6 @@ docker run -d -p 8080:80 chelsielele/about-lwsc:v1
 ```
 ---
 <img src="screenshots/testing-locally.png" width="700">
----
 
 # Kubernetes Deployment & ReplicaSet Creation
 
@@ -127,7 +123,6 @@ kubectl get pods -l app=about-lwsc
 ```
 ---
 <img src="screenshots/ensuring-5-pods-running.png" width="700">
----
 
 The ReplicaSet ensures that 5 pods are always running and serving the application.
 
@@ -160,7 +155,7 @@ minikube service about-lwsc-lb-service --url
 ```
 ---
 <img src="screenshots/retrieving-url.png" width="700">
----
+
 The application can then be accessed using:
 
 ```
@@ -169,7 +164,6 @@ http://192.168.49.2:32067
 ---
 <img src="screenshots/accessing-W-url.png" width="700">
 ---
-
 
 # Key Takeaways
 
