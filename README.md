@@ -17,34 +17,6 @@ Application → Container → Image Registry → Kubernetes Pods → Service →
 
 ---
 
-# Repository Structure
-
-```
-kubernetes-minikube-lab/
-│
-├── README.md
-│
-├── webapp/
-│   ├── Dockerfile
-│   └── index.html
-│
-├── pods/
-│   └── pod.yml
-│
-├── replicasets/
-│   ├── rs1.yml
-│   └── webapp-rs.yml
-│
-├── services/
-│   ├── svc-lb.yml
-│   ├── svc-nodeport.yml
-│   └── webapp-service.yml
-│
-└── screenshots/
-```
-
----
-
 # Deployment Workflow
 
 This lab demonstrates the lifecycle of deploying a containerized application to Kubernetes.
@@ -83,7 +55,7 @@ index.html
 
 # Application
 
-A simple static webpage was created to simulate a web application.
+Created a simple static webpage to simulate a web application.
 
 Files:
 
@@ -101,7 +73,7 @@ webapp/Dockerfile
 
 The application was containerized using Docker.
 
-Build the image:
+Built the image:
 
 ```
 docker build -t chelsielele/about-lwsc:v1 .
@@ -111,20 +83,26 @@ docker build -t chelsielele/about-lwsc:v1 .
 docker images | grep chelsielele
 
 ```
+---
+<img src="screenshots/images-check.png" width="700">
+---
 
 ```
 docker push chelsielele/about-lwsc:v1
 ```
-Push the image to Docker Hub:
+I pushed the image to Docker Hub:
 
 ```
-docker push <dockerhub-username>/webapp:v1
+docker push chelsielele/about-lwsc:v1
+
 ```
-Testing Locally (from within the VM)
+Tested Locally (from within the VM)
 ```
 docker run -d -p 8080:80 chelsielele/about-lwsc:v1
 ```
-
+---
+<img src="screenshots/testing-locally.png" width="700">
+---
 ---
 
 # Kubernetes Deployment & ReplicaSet Creation
@@ -148,6 +126,9 @@ Checked the status:
 ```
 kubectl get pods -l app=about-lwsc
 ```
+---
+<img src="screenshots/ensuring-5-pods-running.png" width="700">
+---
 
 The ReplicaSet ensures that 5 pods are always running and serving the application.
 
@@ -178,13 +159,16 @@ Retrieved the url to access the app:
 ```
 minikube service about-lwsc-lb-service --url 
 ```
-
+---
+<img src="screenshots/retrieving-url.png" width="700">
+---
 The application can then be accessed using:
 
 ```
 http://192.168.49.2:32067
 ```
-
+---
+<img src="screenshots/accessing-W-url.png" width="700">
 ---
 
 
