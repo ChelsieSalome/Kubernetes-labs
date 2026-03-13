@@ -1,4 +1,4 @@
-# Kubernetes Minikube Lab 
+# Kubernetes Lab 
 
 Through this lab, I explore how a simple web application moves through the following stages:
 
