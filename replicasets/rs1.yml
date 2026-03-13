@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: web-rs1
+  labels:
+    app: web
+spec:
+  replicas: 7
+  selector:
+    matchLabels:
+      app: web
+  template:
+    metadata:
+      labels:
+        app: web
+    spec: 
+      containers:
+      - name: hello-pod
+        image: aldiab/webapp:v2
+        ports:
+        - containerPort: 8080

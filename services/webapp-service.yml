@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: about-lwsc-lb-service
+  labels:
+    app: about-lwsc-lb
+spec:
+  type: LoadBalancer
+  selector:
+    app: about-lwsc
+    version: v1
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 80

@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: about-lwsc-rs
+  labels:
+    app: about-lwsc
+    version: v1
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: about-lwsc
+      version: v1
+  template:
+    metadata:
+      labels:
+        app: about-lwsc
+        version: v1
+    spec:
+      containers:
+      - name: about-lwsc-container
+        image: chelsielele/about-lwsc:v1
+        ports:
+        - containerPort: 80
