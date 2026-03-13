@@ -30,7 +30,37 @@ This lab demonstrates the lifecycle of deploying a containerized application to 
 7. Access the application through a browser using the service endpoint
 
 ---
+# Repository Structure 
+```
+Kubernetes-labs/
+│
+├── pods/
+│ └── pod.yml
+│
+├── replicasets/
+│ ├── rs1.yml
+│ └── webapp-rs.yml
+│
+├── services/
+│ ├── svc-lb.yml
+│ ├── svc-nodeport.yml
+│ └── webapp-service.yml
+│
+├── webapp/
+│ ├── Dockerfile
+│ └── index.html
+│
+├── screenshots/
+│ ├── accessing-W-url.png
+│ ├── ensuring-5-pods-running.png
+│ ├── images-check.png
+│ ├── retrieving-url.png
+│ └── testing-locally.png
+│
+└── README.md
+```
 
+---
 # Architecture Overview
 
 ```
