@@ -103,7 +103,6 @@ docker run -d -p 8080:80 chelsielele/about-lwsc:v1
 ---
 <img src="screenshots/testing-locally.png" width="700">
 ---
----
 
 # Kubernetes Deployment & ReplicaSet Creation
 
