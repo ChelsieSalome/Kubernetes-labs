@@ -1,6 +1,6 @@
 # Kubernetes Minikube Lab 
 
-The project demonstrates how a simple web application moves through the following stages:
+Through this lab, I explore how a simple web application moves through the following stages:
 
 Application → Container → Image Registry → Kubernetes Pods → Service → Browser Access
 
